@@ -10,6 +10,8 @@ describe("四則演算", () => {
     });
     test("引数が'0〜100'の範囲外だった場合、例外をスローする", () => {
       const message = "入力値は0〜100の間で入力してください";
+      // アロー関数でラップし、expect関数がエラーをキャッチできるようにする
+      // expect(add(-10, 10)).toThrow(message) だとテストが中断される
       expect(() => add(-10, 10)).toThrow(message);
       expect(() => add(10, -10)).toThrow(message);
       expect(() => add(-10, 110)).toThrow(message);
@@ -25,6 +27,7 @@ describe("四則演算", () => {
     test("引数が'0〜100'の範囲外だった場合、例外をスローする", () => {
       expect(() => sub(-10, 10)).toThrow(RangeError);
       expect(() => sub(10, -10)).toThrow(RangeError);
+      // ErrorクラスはRangeErrorクラスの親なので、異なるクラスだがテストは成功する
       expect(() => sub(-10, 110)).toThrow(Error);
     });
   });

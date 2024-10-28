@@ -1,5 +1,6 @@
 import { add, sub } from ".";
 
+// describeはnest可能、testはnest不可
 describe("四則演算", () => {
   describe("add", () => {
     test("1 + 1 は 2", () => {

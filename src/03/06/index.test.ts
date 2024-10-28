@@ -18,6 +18,7 @@ describe("真偽値の検証", () => {
   test("「null, undefined」の検証", () => {
     expect(null).toBeFalsy();
     expect(undefined).toBeFalsy();
+    // こちらの方がより詳細にテスト可能
     expect(null).toBeNull();
     expect(undefined).toBeUndefined();
     expect(undefined).not.toBeDefined();
